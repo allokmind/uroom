@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Uroom</title>
+    <title>Uroom | 繋がらないSNS </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +10,36 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header class="header">  
+    <div>
+      <%= link_to "Uroom", root_path, class: "title-logo" %>
+    </div>
+    <div class="main-nav">
+      <% if user_signed_in? %>
+          <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= link_to "MY PAGE", edit_user_registration_path, class: "nav-link" %>
+        <%# </div> %>
+      <% else %>
+        <%# <div> %>
+          <%= link_to "LOG IN", new_user_session_path, class: "nav-link" %>
+          <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link" %>
+        <%# </div> %>
+      <% end %>
+        <%= link_to "ABOUT", '#', class: "nav-link" %>
+        <%= link_to "MIND", '#', class: "nav-link" %>
+        <%= link_to "BODY", '#', class: "nav-link" %>
+        <%= link_to "FACE", '#', class: "nav-link" %>
+    </div>
+  </header>
   <body>
-    <%= yield %>
+    <div class="main">
+      <%= yield %>
+    </div>
   </body>
+
+  <footer class="footer">
+    <p>
+      &copy; Uroom 2021.
+    </p>
+  </footer>
 </html>
