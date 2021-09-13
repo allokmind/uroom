@@ -32,6 +32,9 @@
   color: black;
 }
 
+.main-logo {
+  margin-top: 5px;
+}
 .main-nav {
   margin-top: 20px;
 }
@@ -49,13 +52,13 @@
 }
 
 .main {
-  height: 85vh;
+  height: 87vh;
   background-image: url(top.jpg);
   background-size: cover;
 }
 
 .footer {
-  height: 5vh;
+  height: 3vh;
   text-align: center;
   padding-top: 4px;
 }
